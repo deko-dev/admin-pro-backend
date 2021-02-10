@@ -18,6 +18,13 @@ app.use(express.json());
 //  <==Cors==>
 app.use(cors());
 // ====================================>
+// ROUTES
+// ====================================>
+// <==Rutas del Usuario==>
+app.use('/api/usuarios', require('./routes/usuarios.routes'))
+// <==Rutas del Auth==>
+app.use('/api/login', require('./routes/auth.routes'))
+// ====================================>
 
 // ====================================>
 // DATABASE CONNECT
@@ -37,3 +44,4 @@ app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
 })
 // ====================================>
+
